@@ -1,0 +1,10 @@
+dependencies:
+  override:
+    - sudo apt-get install curl
+    - sudo apt-get install jq
+    - sudo apt-get install bc
+    
+test:
+  override:
+    - bash cb_bash.sh
+    
