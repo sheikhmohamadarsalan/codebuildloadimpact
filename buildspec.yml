@@ -1,10 +1,26 @@
-dependencies:
-  override:
-    - sudo apt-get install curl
-    - sudo apt-get install jq
-    - sudo apt-get install bc
-    
-test:
-  override:
-    - bash cb_bash.sh
-    
+version: 0.1
+
+environment_variables:
+  plaintext:
+    JAVA_HOME: "/usr/lib/jvm/java-8-openjdk-amd64"
+
+phases:
+  install:
+    commands:
+      - apt-get update -y
+      - apt-get install -y curl
+      - apt-get install -y jq
+      - apt-get install -y bc
+  pre_build:
+    commands:
+      - echo Nothing to do in the pre_build phase...
+  build:
+    commands:
+      - bash cb_bash.sh
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - *
+  discard-paths: yes
