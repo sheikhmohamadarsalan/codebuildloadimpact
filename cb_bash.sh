@@ -77,7 +77,7 @@ until [[ $(echo "$percentage==100" | bc -l) == 1 ]]; do
 
   maxVULoadTime=`echo "${OUT}" | jq '.__li_user_load_time | max_by(.value) | .value'`
 
-  if [[ $(echo "$maxVULoadTime>100" | bc -l) == 1 ]] ; then 
+  if [[ $(echo "$maxVULoadTime>1000" | bc -l) == 1 ]] ; then 
     perc="VU Load Time exceeded limit of 1 sec: $maxVULoadTime"
     echo "$perc"
     exit 4
