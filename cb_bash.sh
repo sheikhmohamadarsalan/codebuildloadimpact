@@ -16,11 +16,11 @@
 ####
 
 # Load Impact test id
-# env variable from CircleCi - LI_TEST_ID
+# env variable from Codebuild - LI_TEST_ID
 testId="$LI_TEST_ID"
 
 # API_KEY from your Load Impact account
-# env variable from CircleCi - LI_API_KEY
+# env variable from Codebuild - LI_API_KEY
 API_KEY="$LI_API_KEY"
 
 uri="https://api.loadimpact.com/v2/test-configs/$testId/start"
