@@ -1,7 +1,7 @@
 Automated Performance Testing with AWS CodeBuild
 ================================================
 
-<img src=".\media/media/image1.png" width="98" height="41" /> **AWS CodeBuild**
+<img src="media/image1.png" width="98" height="41" /> **AWS CodeBuild**
 
 Load Impact integrates nicely with AWS CodeBuild, a fully managed build service in the cloud. Using our robust and extensible APIs you can integrate Load Impact’s world-leading performance testing platform into your automated AWS CodeBuild build and test process.
 
@@ -21,13 +21,13 @@ Set up your AWS CodeBuild build
 
 We created an AWS CodeBuild project which we named LI\_CB\_DEMO. It’s very simple, everything is just default.
 
-<img src=".\media/media/image2.png" width="624" height="453" />
+<img src="media/image2.png" width="624" height="453" />
 
 Name your build project, identify what you want to build by identifying your repository. In our example we use the github repository [loadimpact/codebuildloadimpact](https://github.com/loadimpact/codebuildloadimpact) which we have made public so you can get it all.
 
 Set the build image to use Ubuntu and the build specification to use the buildspec.yml in the source code root directory.
 
-<img src=".\media/media/image3.png" width="624" height="440" />
+<img src="media/image3.png" width="624" height="440" />
 
 And this is the history when we have executed a couple of times.
 
@@ -71,19 +71,19 @@ Before we dive into the details – let’s get some essentials from your Load I
 
 The API key you get in your Load Impact account when you are logged in
 
-<img src=".\media/media/image4.png" width="624" height="322" />
+<img src="media/image4.png" width="624" height="322" />
 
 Go to “Monitoring” on the left and click “Use REST API”.
 
 Then copy it from the yellow text box.
 
-<img src=".\media/media/image5.png" width="624" height="372" />
+<img src="media/image5.png" width="624" height="372" />
 
 Just note that the API token is *longer* than the size of the box so make sure you get all of it!
 
 Now you need to know which test to run. You can list your test configurations using the API or the CLI if you want to but the simplest way is to open it directly in your account and copy the id from the URL. Underlined in red.
 
-<img src=".\media/media/image6.png" width="624" height="424" />
+<img src="media/image6.png" width="624" height="424" />
 
 So now you have a test id for the test you want to run in your build and your API key.
 
@@ -100,7 +100,7 @@ Just open your project settings and show the advanced settings at the bottom of 
 
 You can just leave all the settings to default, or whatever setting makes sense for your particular build of course. As we don’t want to keep our Load Impact API key in the code in the repository we add it as an environment variable as well as the test id of the test we want to execute.
 
-<img src=".\media/media/image7.png" width="624" height="529" />
+<img src="media/image7.png" width="624" height="529" />
 
 Now, let us look into the script code itself that actually executes the tests.
 
@@ -240,11 +240,11 @@ Finally, executing the build in Codebuild.
 
 As you start a build in Codebuild it will look like this
 
-<img src=".\media/media/image8.png" width="624" height="452" />
+<img src="media/image8.png" width="624" height="452" />
 
 A couple of completed builds.
 
-<img src=".\media/media/image9.png" width="624" height="465" />
+<img src="media/image9.png" width="624" height="465" />
 
 Once the test is actually running Codebuild will have the output from the test in the log.
 
